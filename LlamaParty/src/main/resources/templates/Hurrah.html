@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HURRAH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 align="center">HURRAH</h1>
+            <h3 align="center">So excited you are coming</h2> <br/>
+                <hr />
+                <h3 align="center">Did you know that there will be <span th:text="${totalLlamas}"># Llamas</span> llamas and 
+                    <span th:text="${avgLlamas}">avg llamas</span> per person @ my party!?!?!?!?</h3> 
+
+                <h3 align="center"><a href="/PartyApp/RSVP">>Click Here<</a> to RSVP someone else</h3>
+                <h3 align="center"> Or scroll down to see all the OTHER super people coming...!</h3>
+                <br/>
+                <br/>
+                <hr />
+                <br/>
+                <br/>
+                <div th:each="reservation : ${allReservations}">
+                    <label>
+                        <span>Guest Name: </span><span th:text="${reservation.name}">Guest name</span><span> ||</span>
+                        <span># Llamas: </span><span th:text="${reservation.numLlamas}">numLlamas</span>
+                    </label>
+                </div>
+        </div>
+    </body>
+</html>
